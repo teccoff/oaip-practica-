@@ -1,0 +1,18 @@
+using System; 
+
+namespace ConsoleApp4 
+{ 
+class Program 
+{ 
+static void Main(string[] args) 
+{ 
+int x, y; 
+Console.WriteLine("Введите коордитнату x"); 
+x = Convert.ToInt32(Console.ReadLine()); 
+Console.WriteLine("Введите коордитнату у"); 
+y = Convert.ToInt32(Console.ReadLine()); 
+if ((x > 0 && y > 0) || (x < 0 && y < 0)) Console.WriteLine("Высказывание «Точка с координатами (х, у) лежит в первой или третьей координатной четверти» истинно"); 
+else Console.WriteLine("Высказывание «Точка с координатами (х, у) лежит в первой или третьей координатной четверти» ложно"); 
+} 
+} 
+}
