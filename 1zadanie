@@ -1,0 +1,21 @@
+using System;
+namespace ConsoleApp4
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Random rnd = new Random();
+                int[] A = new int[20];
+                int sum = 0;
+                for (int i = 0; i < 20; i++)
+                {
+                    A[i] = rnd.Next(-10, 10);
+                    Console.Write($"{A[i]} ");
+                    if (A[i] >= 0 && ((i + 1) % 2 == 0)) sum += A[i];
+                }
+                Console.WriteLine();
+                Console.WriteLine(sum);
+            }
+        }
+    }
