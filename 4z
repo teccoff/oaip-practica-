@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp7
+{
+    class abonent
+    {
+        public string secondname;
+        public string fname;
+        public string surname;
+        public string adres;
+        public string nkartochki;
+        public string nbank_scheta;
+        public List<string> listofpok = new List<string>();
+
+        public string ndebit_credit { get; private set; }
+
+        public abonent (string Secondname, string Fname, string Surname, string Adres, string Nkartochki, string Ndebit_credit)
+        {
+            secondname = Secondname;
+            fname = Fname;
+            surname = Surname;
+            adres = Adres;
+            nkartochki = Nkartochki;
+            nbank_scheta = Ndebit_credit;
+        }
+        public abonent () { }
+        public void vivod()
+        {
+            for (int i = 0; i < listofpok.Count; i++)
+            {
+                Console.WriteLine(listofpok[i]);
+            }
+        }
+        public void ustanovka()
+        {
+            abonent abonent = new abonent();
+            Console.Write("Введите фамилию: ");
+            abonent.secondname = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Введите имя: ");
+            abonent.fname = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Введите отчество: ");
+            abonent.surname = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Введите адрес: ");
+            abonent.adres = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Введите номер кредитной карточки: ");
+            abonent.nkartochki = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("дебит кредит : ");
+            abonent.nbank_scheta = Console.ReadLine();
+            Console.WriteLine();
+            listofpok.Add(abonent.secondname + " " + abonent.fname + " " + abonent.surname + ", " + abonent.adres
+            + ", номер кредитки - " + abonent.nkartochki + ", дебит кредит - " + abonent.ndebit_credit);
+        }
+
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            abonent abonent = new abonent ();
+            while (true)
+            {
+                Console.WriteLine("Выберите действие: ");
+                Console.WriteLine();
+                Console.WriteLine("1. установка значения атрибутов");
+                Console.WriteLine("2. получение знаничений ");
+                Console.WriteLine();
+                int n = Convert.ToInt32(Console.ReadLine());
+                if (n == 1) abonent.ustanovka();
+                else if (n == 2) abonent.vivod();
+                else break;
+            }
+        }
+    }
